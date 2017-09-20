@@ -1,5 +1,7 @@
 package br.pucminas.aulapratica.jee.trabalho_jee.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,5 +19,9 @@ public class ClienteRepository {
 	public ClienteEntity salvar(ClienteEntity cliente) {
 		em.persist(cliente);
 		return cliente;
+	}
+	
+	public List<ClienteEntity> listar() {
+		return em.createQuery("Select c from ClienteEntity", ClienteEntity.class).getResultList();
 	}
 }
