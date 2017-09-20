@@ -15,9 +15,7 @@ public class ClienteRepository {
 	}
 
 	public ClienteEntity salvar(ClienteEntity cliente) {
-		//Implementar a lógica para persistir um cliente na base de dados usando o EntityManager
-		return null;
+		em.persist(cliente);
+		return cliente;
 	}
-
-
 }

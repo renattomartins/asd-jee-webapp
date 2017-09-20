@@ -2,14 +2,21 @@ package br.pucminas.aulapratica.jee.trabalho_jee.resource;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class ClienteResource {
 
 	private Long id;
 
+	@NotNull
+	@Size(min=11, max=300, message="Tamanho do nome inválido")
 	private String nome;
 
+	@NotNull
+	@Size(min=11, max=11, message="CPF inválido")
 	private String cpf;
-
+	
 	private Date dataNascimento;
 
 	private String email;

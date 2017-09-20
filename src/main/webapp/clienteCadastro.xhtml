@@ -17,7 +17,7 @@
                <td>
 				  <!-- Neste ponto, é necessário realizar o binding com a propriedade do ManagedBean. O mesmo tratamento é aplicado
 				  aos outros campos do formulário. -->
-                  <h:inputText id="nome" value=""/>
+                  <h:inputText id="nome" value="#{clienteBean.clienteResource.nome}"/>
                   <h:message for="nome" errorClass="invalid"/>
                </td>
             </tr>
@@ -26,7 +26,7 @@
                   <h:outputLabel for="cpf" value="CPF do Cliente:"/>
                </th>
                <td>
-                  <h:inputText id="cpf" value=""/>
+                  <h:inputText id="cpf" value="#{clienteBean.clienteResource.cpf}"/>
                   <h:message for="cpf" errorClass="invalid"/>
                </td>
             </tr>
@@ -35,7 +35,7 @@
                   <h:outputLabel for="email" value="Email do Cliente:"/>
                </th>
                <td>
-                  <h:inputText id="email" value=""/>
+                  <h:inputText id="email" value="#{clienteBean.clienteResource.email}"/>
                   <h:message for="email" errorClass="invalid"/>
                </td>
             </tr>
@@ -44,7 +44,7 @@
                   <h:outputLabel for="dataNascimento" value="Nascimento do Cliente:"/>
                </th>
                <td>
-                  <h:inputText id="dataNascimento" value="" pt:placeholder="dd/MM/yyyy">
+                  <h:inputText id="dataNascimento" value="#{clienteBean.clienteResource.dataNascimento}" pt:placeholder="dd/MM/yyyy">
                   	<f:convertDateTime pattern="dd/MM/yyyy"/>
                   </h:inputText>
                   <h:message for="dataNascimento" errorClass="invalid"/>
@@ -54,7 +54,7 @@
          <p>
          	<!-- Neste ponto, um botão realiza uma ação que dever possuir um bindind para um método que irá executar
          	esta ação no backing bean -->
-            <h:commandButton id="salvar" value="Salvar Cliente" action="" />
+            <h:commandButton id="salvar" value="Salvar Cliente" action="#{clienteBean.salvarCliente()}" />
             
             <!-- Neste ponto, deve-se incluir o botão de direcionamento como indicado no desafio 2 apresentado no laboratório -->
          </p>
